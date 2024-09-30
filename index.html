@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code IDE Prototype</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-800 p-4">
+            <h2 class="text-xl font-bold mb-4">Files</h2>
+            <ul id="file-list" class="space-y-2">
+                <li class="cursor-pointer hover:bg-gray-700 p-2 rounded">index.html</li>
+                <li class="cursor-pointer hover:bg-gray-700 p-2 rounded">script.js</li>
+                <li class="cursor-pointer hover:bg-gray-700 p-2 rounded">style.css</li>
+            </ul>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Toolbar -->
+            <div class="bg-gray-800 p-4 flex justify-between items-center">
+                <div class="flex space-x-4">
+                    <button class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded">Run</button>
+                    <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Save</button>
+                </div>
+                <div>
+                    <select class="bg-gray-700 p-2 rounded">
+                        <option>HTML</option>
+                        <option>JavaScript</option>
+                        <option>CSS</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Code editor -->
+            <div id="editor" class="flex-1"></div>
+
+            <!-- Console output -->
+            <div class="bg-gray-800 p-4 h-1/4">
+                <h3 class="text-lg font-bold mb-2">Console</h3>
+                <div id="console-output" class="bg-gray-900 p-2 rounded h-32 overflow-y-auto">
+                    <!-- Console output will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- AI assistant sidebar -->
+        <div class="w-64 bg-gray-800 p-4">
+            <h2 class="text-xl font-bold mb-4">AI Assistant</h2>
+            <div id="ai-chat" class="bg-gray-900 p-2 rounded h-64 overflow-y-auto mb-4">
+                <!-- AI chat messages will be displayed here -->
+            </div>
+            <input type="text" id="ai-input" class="w-full bg-gray-700 p-2 rounded" placeholder="Ask AI...">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
